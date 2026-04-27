@@ -1,0 +1,55 @@
+Smart Task Extractor is a lightweight NLP-based tool that converts natural 
+language text into structured task data.
+
+It extracts:
+- Task name (what needs to be done)
+- Deadline (when it is due)
+- Priority (based on urgency)
+
+The system is fully rule-based and uses regex + date parsing (no ML models required),
+ making it fast, explainable, and easy to extend.
+
+=============================
+ Input Text
+   ↓
+Task Extraction (regex-based parsing)
+   ↓
+Deadline Extraction (dateparser NLP library)
+   ↓
+Priority Calculation (rule-based urgency scoring)
+   ↓
+Structured Output (JSON + CLI display)
+
+
+====================================
+This project was designed to prioritise:
+- Simplicity (no ML dependencies)
+- Explainability (every decision is traceable)
+- Extensibility (easy to modify rules or add features)
+- Performance (lightweight, fast execution)
+===================
+
+Design Decisions:
+
+1. Rule-based NLP instead of machine learning
+   → Ensures explainability and zero training overhead
+
+2. External library (dateparser) used only for date understanding
+   → Keeps core logic fully controllable
+
+3. Modular pipeline architecture
+   → Each stage can be replaced or upgraded independently
+
+4. Config-driven urgency system
+   → Easy to tune without touching core logic
+
+==============================
+Future Improvements:
+
+1. AI-based task classification (LLM integration)
+2. Web API using FastAPI or Flask
+3. React frontend dashboard for task tracking
+4. Persistent storage (SQLite or Firebase)
+5. Smart reminders and notifications
+6. Confidence scoring for extracted results
+7. Multi-task extraction from a single input sentence
